@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Array.prototype.splice() | 扎星的博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.81b41830.css" as="style"><link rel="preload" href="/assets/js/app.64323b8c.js" as="script"><link rel="preload" href="/assets/js/2.e88648a2.js" as="script"><link rel="preload" href="/assets/js/15.1fbaa6df.js" as="script"><link rel="prefetch" href="/assets/js/10.39068e3c.js"><link rel="prefetch" href="/assets/js/11.898e1a5a.js"><link rel="prefetch" href="/assets/js/12.5ce8a674.js"><link rel="prefetch" href="/assets/js/13.a4eb75ce.js"><link rel="prefetch" href="/assets/js/14.d46df9bb.js"><link rel="prefetch" href="/assets/js/16.bc71f9af.js"><link rel="prefetch" href="/assets/js/17.1039a3e6.js"><link rel="prefetch" href="/assets/js/18.855666f3.js"><link rel="prefetch" href="/assets/js/19.132a797d.js"><link rel="prefetch" href="/assets/js/20.e3fd01a3.js"><link rel="prefetch" href="/assets/js/21.3961c1d2.js"><link rel="prefetch" href="/assets/js/22.6c5b8b05.js"><link rel="prefetch" href="/assets/js/23.3ad6c54a.js"><link rel="prefetch" href="/assets/js/24.eb6d5413.js"><link rel="prefetch" href="/assets/js/25.0048ccac.js"><link rel="prefetch" href="/assets/js/26.7a25af53.js"><link rel="prefetch" href="/assets/js/27.8211dc25.js"><link rel="prefetch" href="/assets/js/28.29a60a51.js"><link rel="prefetch" href="/assets/js/29.e29c43e7.js"><link rel="prefetch" href="/assets/js/3.3321c8ab.js"><link rel="prefetch" href="/assets/js/30.ef299bd0.js"><link rel="prefetch" href="/assets/js/31.22348778.js"><link rel="prefetch" href="/assets/js/32.f7d726bd.js"><link rel="prefetch" href="/assets/js/33.9539b9e1.js"><link rel="prefetch" href="/assets/js/34.32c9907b.js"><link rel="prefetch" href="/assets/js/35.1dc5505a.js"><link rel="prefetch" href="/assets/js/36.88e60d21.js"><link rel="prefetch" href="/assets/js/37.a44839f2.js"><link rel="prefetch" href="/assets/js/38.bb378b41.js"><link rel="prefetch" href="/assets/js/39.65b737cd.js"><link rel="prefetch" href="/assets/js/4.cb489fe6.js"><link rel="prefetch" href="/assets/js/40.277a282c.js"><link rel="prefetch" href="/assets/js/5.5a2c05a5.js"><link rel="prefetch" href="/assets/js/6.7bba33e7.js"><link rel="prefetch" href="/assets/js/7.de7a5de8.js"><link rel="prefetch" href="/assets/js/8.a4d0661e.js"><link rel="prefetch" href="/assets/js/9.e71babb0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.81b41830.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">扎星的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JS基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JS数组</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/js/array/flat/" class="sidebar-link">数组扁平化</a></li><li><a href="/js/array/arrayLike/" class="sidebar-link">伪数组转数组</a></li><li><a href="/js/array/forEach/" class="sidebar-link">forEach&amp;some&amp;every</a></li><li><a href="/js/array/contain/" class="sidebar-link">判断数组是否包含某元素</a></li><li><a href="/js/array/map/" class="sidebar-link">map方法</a></li><li><a href="/js/array/reduce/" class="sidebar-link">reduce方法</a></li><li><a href="/js/array/splice/" aria-current="page" class="active sidebar-link">splice方法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/js/array/splice/#介绍" class="sidebar-link">介绍</a></li><li class="sidebar-sub-header"><a href="/js/array/splice/#实现" class="sidebar-link">实现</a></li></ul></li><li><a href="/js/array/filter/" class="sidebar-link">filter方法</a></li><li><a href="/js/array/push&amp;pop/" class="sidebar-link">push&amp;pop方法</a></li><li><a href="/js/array/sort/" class="sidebar-link">sort方法</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6新特性</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>性能优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>浏览器</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="array-prototype-splice"><a href="#array-prototype-splice" class="header-anchor">#</a> Array.prototype.splice()</h1> <h2 id="介绍"><a href="#介绍" class="header-anchor">#</a> 介绍</h2> <p>splice 可以说是最受欢迎的数组方法之一，api 灵活，使用方便。现在来梳理一下用法:</p> <ul><li>splice(position, count) 表示从 position 索引的位置开始，删除 count 个元素</li> <li>splice(position, 0, ele1, ele2, ...) 表示从 position 索引的元素后面插入一系列的元素</li> <li>splice(postion, count, ele1, ele2, ...) 表示从 position 索引的位置开始，删除 count 个元素，然后再插入一系列的元素</li> <li>返回值为被删除元素组成的数组。</li></ul> <h2 id="实现"><a href="#实现" class="header-anchor">#</a> 实现</h2> <h3 id="思路图"><a href="#思路图" class="header-anchor">#</a> 思路图:</h3> <p><img src="/assets/img/1.418ed4b8.jpg" alt="p1-1"></p> <h3 id="初步实现"><a href="#初步实现" class="header-anchor">#</a> 初步实现</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">splice</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">startIndex<span class="token punctuation">,</span> deleteCount<span class="token punctuation">,</span> <span class="token operator">...</span>addElements</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> array <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+  <span class="token keyword">let</span> len <span class="token operator">=</span> array<span class="token punctuation">.</span>length <span class="token comment">// 原数组长度</span>
+  <span class="token keyword">let</span> deleteArr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>deleteCount<span class="token punctuation">)</span>
+  <span class="token keyword">let</span> argumentsLen <span class="token operator">=</span> arguments<span class="token punctuation">.</span>length
+  <span class="token comment">// 拷贝删除的数组</span>
+  <span class="token function">sliceDeleteElements</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> startIndex<span class="token punctuation">,</span> deleteCount<span class="token punctuation">,</span> deleteArr<span class="token punctuation">)</span>
+
+  <span class="token comment">// 移动删除元素后面的元素</span>
+  <span class="token function">movePostElements</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> startIndex<span class="token punctuation">,</span> len<span class="token punctuation">,</span> deleteCount<span class="token punctuation">,</span> addElements<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 拷贝删除的元素</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sliceDeleteElements</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">array<span class="token punctuation">,</span> startIndex<span class="token punctuation">,</span> deleteCount<span class="token punctuation">,</span> deleteArr</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> deleteCount<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> index <span class="token operator">=</span> startIndex <span class="token operator">+</span> i
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token keyword">in</span> array<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> current <span class="token operator">=</span> array<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+      deleteArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> current
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 移动删除元素后的元素，分为三种情况</span>
+<span class="token comment">// 1. 添加的元素个数和删除的元素个数相等</span>
+<span class="token comment">// 2. 添加的元素个数小于删除元素的个数</span>
+<span class="token comment">// 3. 添加的元素个数大于删除元素的个数</span>
+<span class="token keyword">const</span> <span class="token function-variable function">movePostElements</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">array<span class="token punctuation">,</span> startIndex<span class="token punctuation">,</span> len<span class="token punctuation">,</span> addElements</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>deleteCount <span class="token operator">===</span> addElements<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token keyword">return</span>
+  <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>deleteCount <span class="token operator">&gt;</span> addElements<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 后面的元素集体前移</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> startIndex <span class="token operator">+</span> deleteCount<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> fromIndex <span class="token operator">=</span> i
+
+      <span class="token keyword">let</span> toIndex <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token punctuation">(</span>deleteCount <span class="token operator">-</span> addElements<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>fromIndex <span class="token keyword">in</span> array<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        array<span class="token punctuation">[</span>toIndex<span class="token punctuation">]</span> <span class="token operator">=</span> array<span class="token punctuation">[</span>fromIndex<span class="token punctuation">]</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">delete</span> array<span class="token punctuation">[</span>toIndex<span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 需要删除冗余元素</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> len <span class="token operator">+</span> addElements<span class="token punctuation">.</span>length <span class="token operator">-</span> deleteCount<span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">delete</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// deleteCount &lt; addElements.length</span>
+    <span class="token comment">// 元素集体后移</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> startIndex <span class="token operator">+</span> deleteCount<span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> fromIndex <span class="token operator">=</span> i
+
+      <span class="token keyword">let</span> toIndex <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token punctuation">(</span>addElements<span class="token punctuation">.</span>length <span class="token operator">-</span> deleteCount<span class="token punctuation">)</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>fromIndex <span class="token keyword">in</span> array<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        array<span class="token punctuation">[</span>toIndex<span class="token punctuation">]</span> <span class="token operator">=</span> array<span class="token punctuation">[</span>fromIndex<span class="token punctuation">]</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">delete</span> array<span class="token punctuation">[</span>toIndex<span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="优化一-参数边界的情况"><a href="#优化一-参数边界的情况" class="header-anchor">#</a> 优化一：参数边界的情况</h3> <p>当用户传来非法的 startIndex 和 deleteCount 或者负索引的时候，需要我们做出特殊的处理。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">computeStartIndex</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">startIndex<span class="token punctuation">,</span> len</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>startIndex <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> startIndex <span class="token operator">+</span> len <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">?</span> startIndex <span class="token operator">+</span> len <span class="token operator">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> startIndex <span class="token operator">&gt;=</span> len <span class="token operator">?</span> len <span class="token operator">:</span> startIndex
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">computeDeleteCount</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">startIndex<span class="token punctuation">,</span> len<span class="token punctuation">,</span> deleteCount<span class="token punctuation">,</span> argumentsLen</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 删除个数没有传递，默认删除 startIndex 以及之后的元素</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argumentsLen <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> len <span class="token operator">-</span> startIndex
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 删除数目过小</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>deleteCount <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 删除数目过大</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>deleteCount <span class="token operator">&gt;</span> len <span class="token operator">-</span> startIndex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> len <span class="token operator">-</span> startIndex
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> deleteCount
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="优化二-数组为密封对象或冻结对象"><a href="#优化二-数组为密封对象或冻结对象" class="header-anchor">#</a> 优化二：数组为密封对象或冻结对象</h3> <p>什么是密封对象？</p> <blockquote><p>密封对象是不可扩展的对象，而且已有成员的[[Configurable]]属性被设置为 false，这意味着不能添加、删除方法和属性。但是属性值是可以修改的。</p></blockquote> <p>什么是冻结对象？</p> <blockquote><p>冻结对象是最严格的防篡改级别，除了包含密封对象的限制外，还不能修改属性值。</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 判断 sealed 对象和 frozen 对象, 即 密封对象 和 冻结对象</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">isSealed</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> deleteCount <span class="token operator">!==</span> addElements<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'the object is a sealed object!'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>
+  Object<span class="token punctuation">.</span><span class="token function">isFrozen</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+  <span class="token punctuation">(</span>deleteCount <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">||</span> addElements<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'the object is a frozen object!'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="完整的-splice-方法"><a href="#完整的-splice-方法" class="header-anchor">#</a> 完整的 splice 方法</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token function-variable function">computeStartIndex</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">startIndex<span class="token punctuation">,</span> len</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>startIndex <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> startIndex <span class="token operator">+</span> len <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">?</span> startIndex <span class="token operator">+</span> len <span class="token operator">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> startIndex <span class="token operator">&gt;=</span> len <span class="token operator">?</span> len <span class="token operator">:</span> startIndex
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">computeDeleteCount</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">startIndex<span class="token punctuation">,</span> len<span class="token punctuation">,</span> deleteCount<span class="token punctuation">,</span> argumentsLen</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 删除个数没有传递，默认删除 startIndex 以及之后的元素</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argumentsLen <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> len <span class="token operator">-</span> startIndex
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 删除数目过小</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>deleteCount <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 删除数目过大</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>deleteCount <span class="token operator">&gt;</span> len <span class="token operator">-</span> startIndex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> len <span class="token operator">-</span> startIndex
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> deleteCount
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 拷贝删除的元素</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sliceDeleteElements</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">array<span class="token punctuation">,</span> startIndex<span class="token punctuation">,</span> deleteCount<span class="token punctuation">,</span> deleteArr</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> deleteCount<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> index <span class="token operator">=</span> startIndex <span class="token operator">+</span> i
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token keyword">in</span> array<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> current <span class="token operator">=</span> array<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+      deleteArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> current
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 移动删除元素后的元素，分为三种情况</span>
+<span class="token comment">// 1. 添加的元素个数和删除的元素个数相等</span>
+<span class="token comment">// 2. 添加的元素个数小于删除元素的个数</span>
+<span class="token comment">// 3. 添加的元素个数大于删除元素的个数</span>
+<span class="token keyword">const</span> <span class="token function-variable function">movePostElements</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">array<span class="token punctuation">,</span> startIndex<span class="token punctuation">,</span> len<span class="token punctuation">,</span> addElements</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>deleteCount <span class="token operator">===</span> addElements<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token keyword">return</span>
+  <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>deleteCount <span class="token operator">&gt;</span> addElements<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 后面的元素集体前移</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> startIndex <span class="token operator">+</span> deleteCount<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> fromIndex <span class="token operator">=</span> i
+
+      <span class="token keyword">let</span> toIndex <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token punctuation">(</span>deleteCount <span class="token operator">-</span> addElements<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>fromIndex <span class="token keyword">in</span> array<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        array<span class="token punctuation">[</span>toIndex<span class="token punctuation">]</span> <span class="token operator">=</span> array<span class="token punctuation">[</span>fromIndex<span class="token punctuation">]</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">delete</span> array<span class="token punctuation">[</span>toIndex<span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 需要删除冗余元素</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> len <span class="token operator">+</span> addElements<span class="token punctuation">.</span>length <span class="token operator">-</span> deleteCount<span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">delete</span> array<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// deleteCount &lt; addElements.length</span>
+    <span class="token comment">// 元素集体后移</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> startIndex <span class="token operator">+</span> deleteCount<span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> fromIndex <span class="token operator">=</span> i
+
+      <span class="token keyword">let</span> toIndex <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token punctuation">(</span>addElements<span class="token punctuation">.</span>length <span class="token operator">-</span> deleteCount<span class="token punctuation">)</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>fromIndex <span class="token keyword">in</span> array<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        array<span class="token punctuation">[</span>toIndex<span class="token punctuation">]</span> <span class="token operator">=</span> array<span class="token punctuation">[</span>fromIndex<span class="token punctuation">]</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">delete</span> array<span class="token punctuation">[</span>toIndex<span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">splice</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">startIndex<span class="token punctuation">,</span> deleteCount<span class="token punctuation">,</span> <span class="token operator">...</span>addElements</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> argumentsLen <span class="token operator">=</span> arguments<span class="token punctuation">.</span>length
+  <span class="token keyword">let</span> array <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+  <span class="token keyword">let</span> len <span class="token operator">=</span> array<span class="token punctuation">.</span>length
+  <span class="token keyword">let</span> deleteArr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>deleteCount<span class="token punctuation">)</span>
+
+  startIndex <span class="token operator">=</span> <span class="token function">computeStartIndex</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">,</span> len<span class="token punctuation">)</span>
+  deleteCount <span class="token operator">=</span> <span class="token function">computeDeleteCount</span><span class="token punctuation">(</span>startIndex<span class="token punctuation">,</span> len<span class="token punctuation">,</span> deleteCount<span class="token punctuation">,</span> argumentsLen<span class="token punctuation">)</span>
+
+  <span class="token comment">// 判断 sealed 对象和 frozen 对象, 即 密封对象 和 冻结对象</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">isSealed</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> deleteCount <span class="token operator">!==</span> addElements<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'the object is a sealed object!'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>
+    Object<span class="token punctuation">.</span><span class="token function">isFrozen</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+    <span class="token punctuation">(</span>deleteCount <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">||</span> addElements<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'the object is a frozen object!'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 拷贝删除的元素</span>
+  <span class="token function">sliceDeleteElements</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> startIndex<span class="token punctuation">,</span> deleteCount<span class="token punctuation">,</span> deleteArr<span class="token punctuation">)</span>
+  <span class="token comment">// 移动删除元素后面的元素</span>
+  <span class="token function">movePostElements</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> startIndex<span class="token punctuation">,</span> len<span class="token punctuation">,</span> deleteCount<span class="token punctuation">,</span> addElements<span class="token punctuation">)</span>
+
+  <span class="token comment">// 插入新元素</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> addElements<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    array<span class="token punctuation">[</span>startIndex <span class="token operator">+</span> i<span class="token punctuation">]</span> <span class="token operator">=</span> addElements<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+
+  array<span class="token punctuation">.</span>length <span class="token operator">=</span> len <span class="token operator">-</span> deleteCount <span class="token operator">+</span> addElements<span class="token punctuation">.</span>length
+
+  <span class="token keyword">return</span> deleteArr
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/js/array/reduce/" class="prev">
+        reduce方法
+      </a></span> <span class="next"><a href="/js/array/filter/">
+        filter方法
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.64323b8c.js" defer></script><script src="/assets/js/2.e88648a2.js" defer></script><script src="/assets/js/15.1fbaa6df.js" defer></script>
+  </body>
+</html>

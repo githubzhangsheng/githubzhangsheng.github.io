@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Array.prototype.reduce() | 扎星的博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.81b41830.css" as="style"><link rel="preload" href="/assets/js/app.64323b8c.js" as="script"><link rel="preload" href="/assets/js/2.e88648a2.js" as="script"><link rel="preload" href="/assets/js/30.ef299bd0.js" as="script"><link rel="prefetch" href="/assets/js/10.39068e3c.js"><link rel="prefetch" href="/assets/js/11.898e1a5a.js"><link rel="prefetch" href="/assets/js/12.5ce8a674.js"><link rel="prefetch" href="/assets/js/13.a4eb75ce.js"><link rel="prefetch" href="/assets/js/14.d46df9bb.js"><link rel="prefetch" href="/assets/js/15.1fbaa6df.js"><link rel="prefetch" href="/assets/js/16.bc71f9af.js"><link rel="prefetch" href="/assets/js/17.1039a3e6.js"><link rel="prefetch" href="/assets/js/18.855666f3.js"><link rel="prefetch" href="/assets/js/19.132a797d.js"><link rel="prefetch" href="/assets/js/20.e3fd01a3.js"><link rel="prefetch" href="/assets/js/21.3961c1d2.js"><link rel="prefetch" href="/assets/js/22.6c5b8b05.js"><link rel="prefetch" href="/assets/js/23.3ad6c54a.js"><link rel="prefetch" href="/assets/js/24.eb6d5413.js"><link rel="prefetch" href="/assets/js/25.0048ccac.js"><link rel="prefetch" href="/assets/js/26.7a25af53.js"><link rel="prefetch" href="/assets/js/27.8211dc25.js"><link rel="prefetch" href="/assets/js/28.29a60a51.js"><link rel="prefetch" href="/assets/js/29.e29c43e7.js"><link rel="prefetch" href="/assets/js/3.3321c8ab.js"><link rel="prefetch" href="/assets/js/31.22348778.js"><link rel="prefetch" href="/assets/js/32.f7d726bd.js"><link rel="prefetch" href="/assets/js/33.9539b9e1.js"><link rel="prefetch" href="/assets/js/34.32c9907b.js"><link rel="prefetch" href="/assets/js/35.1dc5505a.js"><link rel="prefetch" href="/assets/js/36.88e60d21.js"><link rel="prefetch" href="/assets/js/37.a44839f2.js"><link rel="prefetch" href="/assets/js/38.bb378b41.js"><link rel="prefetch" href="/assets/js/39.65b737cd.js"><link rel="prefetch" href="/assets/js/4.cb489fe6.js"><link rel="prefetch" href="/assets/js/40.277a282c.js"><link rel="prefetch" href="/assets/js/5.5a2c05a5.js"><link rel="prefetch" href="/assets/js/6.7bba33e7.js"><link rel="prefetch" href="/assets/js/7.de7a5de8.js"><link rel="prefetch" href="/assets/js/8.a4d0661e.js"><link rel="prefetch" href="/assets/js/9.e71babb0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.81b41830.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">扎星的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JS基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JS数组</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/js/array/flat/" class="sidebar-link">数组扁平化</a></li><li><a href="/js/array/arrayLike/" class="sidebar-link">伪数组转数组</a></li><li><a href="/js/array/forEach/" class="sidebar-link">forEach&amp;some&amp;every</a></li><li><a href="/js/array/contain/" class="sidebar-link">判断数组是否包含某元素</a></li><li><a href="/js/array/map/" class="sidebar-link">map方法</a></li><li><a href="/js/array/reduce/" aria-current="page" class="active sidebar-link">reduce方法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/js/array/reduce/#reduce-方法" class="sidebar-link">reduce 方法</a></li><li class="sidebar-sub-header"><a href="/js/array/reduce/#手写实现数组的-reduce-方法" class="sidebar-link">手写实现数组的 reduce 方法</a></li></ul></li><li><a href="/js/array/splice/" class="sidebar-link">splice方法</a></li><li><a href="/js/array/filter/" class="sidebar-link">filter方法</a></li><li><a href="/js/array/push&amp;pop/" class="sidebar-link">push&amp;pop方法</a></li><li><a href="/js/array/sort/" class="sidebar-link">sort方法</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6新特性</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>性能优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>浏览器</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="array-prototype-reduce"><a href="#array-prototype-reduce" class="header-anchor">#</a> Array.prototype.reduce()</h1> <h2 id="reduce-方法"><a href="#reduce-方法" class="header-anchor">#</a> reduce 方法</h2> <h3 id="常规用法"><a href="#常规用法" class="header-anchor">#</a> 常规用法</h3> <p>reduce() 方法对数组中的每个元素执行一个由用户提供的 reducer 函数，将其结果汇总为单个返回值。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> array1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">reducer</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">accumulator<span class="token punctuation">,</span> currentValue</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> accumulator <span class="token operator">+</span> currentValue
+
+<span class="token comment">// 1 + 2 + 3 + 4</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>array1<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>reducer<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// expected output: 10</span>
+</code></pre></div><h3 id="参数说明"><a href="#参数说明" class="header-anchor">#</a> 参数说明</h3> <p>语法: array.reduce(function(accumulator, currentValue, currentIndex, arr), initialValue)
+reduce() 方法传入两个参数:
+第一个参数为一个函数。必须值</p> <p>第一个参数传入的函数有 4 个参数：</p> <ul><li>1.accumulator 必需。初始值, 或者计算结束后的返回值。</li> <li>2.currentValue 必需。当前元素的值。</li> <li>3.currentIndex 可选。当前元素的索引，元素索引从 1 开始！</li> <li>4.arr 可选。当前元素所属的数组对象。</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> array1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">reducer</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">accumulator<span class="token punctuation">,</span> currentValue<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
+    <span class="token string">'执行了第'</span> <span class="token operator">+</span> index <span class="token operator">+</span> <span class="token string">'次,accumulator='</span> <span class="token operator">+</span> accumulator <span class="token operator">+</span> <span class="token string">' currentValue='</span><span class="token punctuation">,</span>
+    currentValue
+  <span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token string">'a'</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> ret <span class="token operator">=</span> array1<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>reducer<span class="token punctuation">)</span> <span class="token comment">// &quot;a&quot;</span>
+
+<span class="token comment">// index 索引从 1 开始</span>
+<span class="token comment">// Output:</span>
+<span class="token comment">// 执行了第1次,accumulator=1 currentValue= 2</span>
+<span class="token comment">// 执行了第2次,accumulator=a currentValue= 3</span>
+<span class="token comment">// 执行了第3次,accumulator=a currentValue= 4</span>
+</code></pre></div><p>由上述代码可知，数组遍历中每一次的 accumulator 的值，均为上一次遍历中返回的结果。而 accumulator 的初始的值已经被固定，是数组的第一个元素。而最终返回的结果也是最后一次遍历中返回的值。例如这里就是返回一个“a”。</p> <p>如果数组只有一个元素，reducer 不会被执行，reduce 方法直接返回数组的第一个元素</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> array1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">reducer</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">accumulator<span class="token punctuation">,</span> currentValue<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
+    <span class="token string">'执行了第'</span> <span class="token operator">+</span> index <span class="token operator">+</span> <span class="token string">'次,accumulator='</span> <span class="token operator">+</span> accumulator <span class="token operator">+</span> <span class="token string">'currentValue='</span><span class="token punctuation">,</span>
+    currentValue
+  <span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token number">9</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> ret <span class="token operator">=</span> array1<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>reducer<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span> <span class="token comment">// Output: 1</span>
+</code></pre></div><p>如果数组为空则直接报错，提示数组没有初始值（首元素），也就是无法为 accumulator 赋予初值。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> array1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">reducer</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">accumulator<span class="token punctuation">,</span> currentValue<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> ret <span class="token operator">=</span> array1<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>reducer<span class="token punctuation">)</span>
+<span class="token comment">// Uncaught TypeError: Reduce of empty array with no initial value</span>
+</code></pre></div><p>第二个参数为一个初始值 initValue。可选值。
+reduce 方法在有第二个参数 initValue 的情况下，此时传入的 initValue 就充当了原来数组中的首元素的作用，初始的 accumulator 值被赋予为 initValue, 而不是数组的首元素，如果此时数组为空，也不会报错，会直接返回 initValue 的值。同时数组的 index 序号从 0 开始，数组的第一个元素也参与 reduce 计算。迭代执行的总次数为数组的元素个数。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> array1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">reducer</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">accumulator<span class="token punctuation">,</span> currentValue<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'acc='</span> <span class="token operator">+</span> accumulator <span class="token operator">+</span> <span class="token string">' cur='</span> <span class="token operator">+</span> currentValue <span class="token operator">+</span> <span class="token string">' index='</span> <span class="token operator">+</span> index<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> accumulator <span class="token operator">+</span> currentValue
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> ret <span class="token operator">=</span> array1<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>reducer<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>
+
+<span class="token comment">// acc=5 cur=1 index=0</span>
+<span class="token comment">// acc=6 cur=2 index=1</span>
+<span class="token comment">// acc=8 cur=3 index=2</span>
+<span class="token comment">// acc=11 cur=4 index=3</span>
+<span class="token comment">// 15</span>
+</code></pre></div><h2 id="手写实现数组的-reduce-方法"><a href="#手写实现数组的-reduce-方法" class="header-anchor">#</a> 手写实现数组的 reduce 方法</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">reduce</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">callbackFn<span class="token punctuation">,</span> initialValue</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 处理异常数组类型</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">||</span> <span class="token keyword">this</span> <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">&quot;Cannot read property 'reduce' of null or undefined&quot;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 处理异常回调函数</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>callbackFn<span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token string">'[object Function]'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span>callbackFn <span class="token operator">+</span> <span class="token string">'is not a function'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">let</span> <span class="token constant">O</span> <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token comment">// 转成对象</span>
+  <span class="token keyword">let</span> len <span class="token operator">=</span> <span class="token constant">O</span><span class="token punctuation">.</span>length <span class="token operator">&gt;&gt;&gt;</span> <span class="token number">0</span>
+  <span class="token keyword">let</span> k <span class="token operator">=</span> <span class="token number">0</span>
+
+  <span class="token keyword">let</span> accumulator <span class="token operator">=</span> initialValue <span class="token comment">// 初始化初始值</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>accumulator <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 不传 initialValue 需要主动找到初始值</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token keyword">in</span> <span class="token constant">O</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        accumulator <span class="token operator">=</span> <span class="token constant">O</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span>
+        k<span class="token operator">++</span>
+        <span class="token keyword">break</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>accumulator <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Each element of the array is empty'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token keyword">in</span> <span class="token constant">O</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      accumulator <span class="token operator">=</span> <span class="token function">callbackFn</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">,</span> accumulator<span class="token punctuation">,</span> <span class="token constant">O</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span> k<span class="token punctuation">,</span> <span class="token constant">O</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> accumulator
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/js/array/map/" class="prev">
+        map方法
+      </a></span> <span class="next"><a href="/js/array/splice/">
+        splice方法
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.64323b8c.js" defer></script><script src="/assets/js/2.e88648a2.js" defer></script><script src="/assets/js/30.ef299bd0.js" defer></script>
+  </body>
+</html>
